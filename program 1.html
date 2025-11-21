@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Digital Garden</title>
+    <style>
+        /* --- CSS STYLING --- */
+        body {
+            background-color: #f4f9f4; 
+            font-family: Verdana, sans-serif; 
+            color: #333; 
+            margin: 0;
+            padding: 20px;
+        }
+
+        .garden-container {
+            background-color: white;
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 40px;
+            border: 1px solid #c1e1c1; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
+        }
+
+        h1 {
+            color: #2e7d32; 
+            text-align: center;
+            border-bottom: 2px solid #2e7d32;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #4caf50; 
+            margin-top: 30px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        /* --- IMAGE STYLING --- */
+        .featured-image {
+            width: 100%;
+            height: 300px; /* Fixed height for better look */
+            object-fit: cover; /* Crops image nicely */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin: 20px 0;
+            border: 2px solid #e8f5e9;
+        }
+
+        a {
+            color: #d84315; 
+            text-decoration: none; 
+            font-weight: bold;
+        }
+
+        .grow-btn {
+            background-color: #4caf50; 
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto 0 auto; 
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .grow-btn:hover {
+            background-color: #388e3c; 
+        }
+
+        /* Modal Styling */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0,0,0,0.5); 
+            justify-content: center; 
+            align-items: center; 
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .close-btn {
+            float: right;
+            font-size: 24px;
+            cursor: pointer;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="garden-container">
+        <h1>The Digital Garden of Code</h1>
+        <p>Welcome to your first digital ecosystem. Here, code grows like plants.</p>
+
+        <h2>Chapter 1: The Soil (HTML)</h2>
+        <p>
+            HTML is the soil. It provides the foundation and nutrients. Without this structure, nothing can take root.
+            The image below represents the raw potential of your code.
+        </p>
+        
+        <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=1000&q=80" alt="Seedling growing in soil" class="featured-image">
+
+        <p>
+            Check out more resources at the <a href="https://www.google.com" target="_blank">Botanical Tech Hub</a>.
+        </p>
+
+        <h2>Chapter 2: The Life (JavaScript)</h2>
+        <p>
+            Static images are beautiful, but interaction is life. We use JavaScript to water this soil. 
+            Click the button below to nurture the code.
+        </p>
+
+        <button class="grow-btn" onclick="openModal()">Water the Garden</button>
+    </div>
+
+    <div id="gardenModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3 style="color: #2e7d32;">🌱 Growth Detected!</h3>
+            <p>You watered the soil! The HTML seeds are now sprouting.</p>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById("gardenModal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("gardenModal").style.display = "none";
+        }
+        
+        // Close if clicked outside box
+        window.onclick = function(event) {
+            var modal = document.getElementById("gardenModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
